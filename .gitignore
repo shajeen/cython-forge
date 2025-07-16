@@ -1,0 +1,36 @@
+# Visual Studio Code extension package
+*.vsix
+
+# Node.js
+node_modules/
+
+# Visual Studio Code
+.vscode/
+*.code-workspace
+
+# Compiled extension JavaScript and map files
+out/
+dist/
+
+# Dependency directories
+dependency/
+
+# Local extension settings
+.vscode-test/
+*.env
+*.log
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# Python
+*.pyc
+__pycache__/
+venv/
+build/
+*.so
+
+vsc-extension-quickstart.md

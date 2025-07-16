@@ -1,0 +1,34 @@
+.vscode/**
+.vscode-test/**
+test/**
+.gitignore
+.yarnrc
+vsc-extension-quickstart.md
+**/jsconfig.json
+**/*.map
+**/.eslintrc.json
+# Python envs
+.venv/
+env/
+__pycache__/
+
+# Node modules
+node_modules/
+
+# Build scripts / dev files
+BUILD.sh
+.vscode/
+.devcontainer/
+*.log
+
+# Docs and images (unless needed)
+docs/
+
+
+# Git
+.git/
+.gitignore
+
+# System files
+.DS_Store
+Thumbs.db

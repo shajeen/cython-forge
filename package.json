@@ -1,0 +1,96 @@
+{
+  "name": "cython-forge",
+  "displayName": "Cython Forge",
+  "publisher": "SheikSShajeenAhamed",
+  "description": "Helps to build Cython files",
+  "icon": "images/cython-forge-icon.png",
+  "version": "0.0.2",
+  "engines": {
+    "vscode": "^1.84.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "cython",
+    "python",
+    "build",
+    "setup.py"
+  ],
+  "activationEvents": [
+    "onLanguage:python"
+  ],
+  "main": "./src/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "cython-forge.buildCython",
+        "title": "Cython Forge: Build Cython",
+        "category": "Cython Forge"
+      },
+      {
+        "command": "cython-forge.selectFolder",
+        "title": "Cython Forge: Select Cython Folder",
+        "category": "Cython Forge"
+      },
+      {
+        "command": "cython-forge.selectVenv",
+        "title": "Cython Forge: Select Virtual Environment",
+        "category": "Cython Forge"
+      }
+    ],
+    "configuration": {
+      "type": "object",
+      "title": "Cython Forge Configuration",
+      "properties": {
+        "cython-forge.defaultBuildArgs": {
+          "type": "string",
+          "default": "build_ext --inplace",
+          "description": "Default arguments for setup.py build command"
+        },
+        "cython-forge.showBuildOutput": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show build output in terminal"
+        },
+        "cython-forge.autoDiscoverEnvironments": {
+          "type": "boolean",
+          "default": true,
+          "description": "Automatically discover Python environments"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "lint": "eslint . --ext .js",
+    "lint:fix": "eslint . --ext .js --fix",
+    "pretest": "npm run lint",
+    "test": "node ./test/runTest.js",
+    "test:unit": "mocha test/unit/**/*.test.js",
+    "package": "vsce package",
+    "build": "npm run lint && npm run test && npm run package"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.3",
+    "@types/node": "18.x",
+    "@types/vscode": "^1.84.0",
+    "@vscode/test-electron": "^2.3.6",
+    "@vscode/vsce": "^3.6.0",
+    "eslint": "^8.52.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-security": "^1.7.1",
+    "glob": "^7.2.0",
+    "mocha": "^10.2.0",
+    "sinon": "^21.0.0",
+    "typescript": "^5.2.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shajeen/vscode-cython-builder.git"
+  },
+  "dependencies": {},
+  "engines": {
+    "node": ">=18.0.0",
+    "vscode": "^1.84.0"
+  }
+}
